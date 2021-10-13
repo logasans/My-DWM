@@ -1,3 +1,4 @@
+#include <X11/XF86keysym.h>
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
@@ -61,6 +62,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "xfce4-terminal", NULL };
 static const char *browser[]  = { "firefox", NULL };
+static const char *fm[] = { "nemo", NULL };
 
 #include "shiftview.c"
 static Key keys[] = {
@@ -93,7 +95,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_n,      shiftview,      {.i = +1 } },
 	{ MODKEY,                       XK_b,      shiftview,      {.i = -1 } },	
 	{ ControlMask|MOD2KEY,          XK_t,      spawn,          {.v = termcmd } },
-	{ MODKEY,			XK_1,	   spawn,	   {.v = browser } },	
+	{ MODKEY,                       XK_1,	   spawn,	   {.v = browser } },	
+	{ MODKEY,		        XK_e,      spawn,          {.v = fm} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
