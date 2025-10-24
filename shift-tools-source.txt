@@ -1,0 +1,1 @@
+https://codeberg.org/explosion-mental/demwm/raw/branch/patches/dwm-shif-tools-6.2.diff
